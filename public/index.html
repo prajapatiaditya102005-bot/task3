@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore internship opportunities and apply online.">
+  <title>InternBoard | Internship Opportunities</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <h1>Intern<span>Board</span></h1>
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a><a href="#internships">Internships</a><a href="#apply">Apply</a><a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+  <main id="home">
+    <section class="hero"><div class="container">
+      <h2>Find Your Dream Internship</h2>
+      <p>Explore opportunities and start building your career.</p>
+    </div></section>
+    <section class="container board" id="internships">
+      <h2>Explore Internships</h2>
+      <form id="filterForm" class="filters" role="search">
+        <div class="form-group"><label for="search">Search internships</label>
+          <input type="search" id="search" placeholder="Search by title or domain..."></div>
+        <div class="form-group"><label for="domain">Select Domain</label>
+          <select id="domain"><option value="all">All Domains</option></select></div>
+        <button type="reset" id="resetBtn">Reset Filters</button>
+      </form>
+      <p id="status" role="status" aria-live="polite">Loading internships…</p>
+      <div id="internshipList" class="internship-grid"></div>
+    </section>
+    <section class="container application-section" id="apply">
+      <h2>Apply for an Internship</h2>
+      <p class="form-note">Choose an opportunity above, then submit your details below.</p>
+      <div class="application-panel">
+        <form id="applicationForm">
+          <div class="application-grid">
+            <div class="form-group full"><label for="internshipId">Internship</label>
+              <select id="internshipId" name="internshipId" required><option value="">Select an internship</option></select></div>
+            <div class="form-group"><label for="applicantName">Full name</label>
+              <input id="applicantName" name="name" type="text" minlength="2" maxlength="80" autocomplete="name" required></div>
+            <div class="form-group"><label for="applicantEmail">Email</label>
+              <input id="applicantEmail" name="email" type="email" maxlength="254" autocomplete="email" required></div>
+            <div class="form-group"><label for="applicantPhone">Phone number</label>
+              <input id="applicantPhone" name="phone" type="tel" minlength="10" maxlength="15" pattern="[0-9+() -]{10,15}" autocomplete="tel" required></div>
+            <div class="form-group full"><label for="coverLetter">Why are you a good fit? (optional)</label>
+              <textarea id="coverLetter" name="coverLetter" maxlength="1000" placeholder="Briefly introduce your skills and interest…"></textarea></div>
+          </div>
+          <p class="form-note">Your details are sent securely to the application API.</p>
+          <button id="submitApplication" type="submit">Submit Application</button>
+          <p id="applicationStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer id="about"><p>© 2026 InternBoard. All rights reserved.</p></footer>
+  <script src="script.js" defer></script>
+</body>
+</html>
