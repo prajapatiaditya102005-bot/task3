@@ -9,15 +9,6 @@ A simple static frontend connected to a Node.js/Express API with SQLite persiste
 - Applications are stored in SQLite using parameterized SQL statements.
 - Helmet security headers, JSON body size limit, global API rate limit, and stricter application-submission rate limit.
 - Automated validation tests using Node's built-in test runner.
-
-## Requirements
-- Node.js 18+
-- npm
-
-## Run
-```bash
-npm install
-npm run dev
 ```
 Open **http://localhost:5000**. The frontend and API use the same origin, so no frontend API URL configuration is needed.
 
